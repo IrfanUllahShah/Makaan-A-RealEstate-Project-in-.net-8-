@@ -1,0 +1,52 @@
+﻿@{
+	Layout = "~/Views/Shared/_LayoutWithoutFooter.cshtml";
+}
+
+<body class="signup-body">
+	<div class="container">
+		<div class="d-flex justify-content-center h-100">
+			<div class="card">
+				<div class="card-header">
+					<h2>Log In</h2>
+
+				</div>
+				<div class="card-body">
+					@if (ViewBag.errorMessage != null)
+					{
+						<div class="alert alert-danger" role="alert">
+							@ViewBag.errorMessage
+						</div>
+					}
+					<form method="post" action="@Url.Action("LogIn", "Login")">
+						@Html.AntiForgeryToken()
+ 					<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-envelope"></i></span>
+							</div>
+							<input type="email" class="form-control" placeholder="Email" name="Email" required>
+
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" class="form-control" placeholder="password" name="Password" required>
+							
+						</div>
+						
+						<div class="form-group">
+							<input type="submit" value="Login" class="btn float-right login_btn" style="background-color: #00B98E;">
+						</div>
+					</form>
+				</div>
+				<div class="card-footer">
+					<div class="d-flex justify-content-center links">
+						<p>Don't have an account? <a asp-action="SignUp" asp-controller="Login">Sign Up</a></p>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

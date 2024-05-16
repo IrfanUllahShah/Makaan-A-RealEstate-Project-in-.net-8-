@@ -1,0 +1,64 @@
+﻿@model InfraStructure.ViewModels.OwnerUpdateVm
+
+@{
+    Layout = "~/Views/Shared/_LayoutOwner.cshtml";
+    ViewData["Title"] = "Update";
+}
+
+
+<div class="OwnerProfile">
+    <h1>Update</h1>
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Update">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @Html.HiddenFor(p => p.Id)
+                @*  <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+                </div> *@
+                <div class="form-group">
+                    <label asp-for="FirstName" class="control-label"></label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastName" class="control-label"></label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Contact" class="control-label"></label>
+                    <input asp-for="Contact" class="form-control" />
+                    <span asp-validation-for="Contact" class="text-danger"></span>
+                </div>
+                @Html.HiddenFor(p => p.Password)
+                @* <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+                </div> *@
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn login_btn" style="background-color: #00B98E;" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Profile" class="btn login_btn float-right" style="background-color: #00B98E;">Back</a>
+    </div>
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,133 @@
+@import url('loginpage.css');
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  margin:0;
+  padding:0;
+}
+
+
+
+/*------------------------------------------------SignUp command Login CSs-----------------------------------*/
+/* Made with love by Mutiullah Samim*/
+
+
+
+.signup-body {
+    
+    background-image: url('../images/loginbg1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+}
+
+.container {
+    height: 100%;
+    align-content: center;
+}
+
+.card {
+    height: auto;
+    margin-top: 5%;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+
+}
+
+.social_icon span {
+    font-size: 60px;
+    margin-left: 10px;
+    /*color: #FFC312; yellow color*/
+    color: #00B98E;
+}
+
+    .social_icon span:hover {
+        color: white;
+        cursor: pointer;
+    }
+
+.card-header h2 {
+    color: white;
+    text-align:center
+}
+
+.social_icon {
+    position: absolute;
+    right: 20px;
+    top: -45px;
+}
+
+.input-group-prepend span {
+    width: 50px;
+    background-color: #FFC312;
+    color: black;
+    border: 0 !important;
+}
+
+input:focus {
+    outline: 0 0 0 0 !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+.remember {
+    color: white;
+}
+
+    .remember input {
+        width: 20px;
+        height: 20px;
+        margin-left: 15px;
+        margin-right: 5px;
+    }
+
+.login_btn {
+    color: white !important;
+    background-color: #FFC312;
+    width: 100px;
+}
+
+    .login_btn:hover {
+        color: black !important;
+        background-color: #FFC312 !important;
+    }
+
+.links {
+    color: white;
+}
+
+    .links a:hover {
+        color: #FFC312 !important;
+    }
+
+/*css form user color-profile view*/
+
+.OwnerProfile{
+
+    margin:5% 5%;
+}
+
+
+.property-image {
+    max-width: 100%;
+    height: 240px !important;
+}

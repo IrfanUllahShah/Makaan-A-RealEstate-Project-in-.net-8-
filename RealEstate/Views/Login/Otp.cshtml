@@ -1,0 +1,43 @@
+﻿@{
+	Layout = "~/Views/Shared/_LayoutWithoutFooter.cshtml";
+}
+
+<body class="signup-body">
+	<div class="container">
+		<div class="d-flex justify-content-center h-100">
+			<div class="card">
+				<div class="card-header">
+					<h2>OTP Verification</h2>
+
+				</div>
+				<div class="card-body">
+					@if (TempData["ErrorMessage"] != null)
+					{
+						<div class="alert alert-danger" role="alert">
+							@TempData["ErrorMessage"]
+						</div>
+					}
+				<div class="card-body">
+					<form asp-action="VerifyOtp" asp-controller="Login" method="post">
+						
+						<div class="form-group input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+								<input type="number" id="enteredOtp" name="enteredOtp" maxlength="4" class="form-control" placeholder="4 digits OTP" required />
+							
+						</div>
+						<div class="form-group">
+								<input type="submit" value="Verify OTP" class="btn float-right login_btn" style="background-color: #00B98E;">
+						</div>
+							<div class="form-group links">
+								<a asp-action="ResentOtp" asp-controller="Login" class="" id="resendOtpLink">Resend OTP</a>
+						</div>
+					</form>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</body>
+

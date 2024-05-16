@@ -1,0 +1,131 @@
+﻿@model InfraStructure.ViewModels.PropertyCreatVm
+
+@{
+    ViewData["Title"] = "AddProperty";
+    Layout = "~/Views/Shared/_LayoutOwner.cshtml";
+}
+
+<div class="OwnerProfile">
+    <h1>Add Property</h1>
+    <hr />
+
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+    }
+
+    <form asp-action="AddProperty" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Title"></label>
+                    <input asp-for="Title" class="form-control" placeholder="Enter Title for your property" required/>
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Price"></label>
+                    <input asp-for="Price" class="form-control" placeholder="Enter price in lacs e.g: 80 , 120" required />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="ChoiseId"></label>
+                    <select asp-for="ChoiseId" class="form-control" required>
+                        <option value="">--Select Choice--</option>
+                        @{
+                            if (Model != null)
+                            {
+                                foreach (var choise in Model.choises)
+                                {
+                                    <option value="@choise.Id">@choise.Choise1</option>
+                                }
+                            }
+                        }
+                    </select>
+                    <span asp-validation-for="ChoiseId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="TypeId"></label>
+                    <select asp-for="TypeId" class="form-control" required>
+                        <option value="">--Select Type--</option>
+                        @{
+                            if (Model != null)
+                            {
+                                foreach (var type in Model.types)
+                                {
+                                    <option value="@type.Id">@type.Type1</option>
+                                }
+                            }
+                        }
+                    </select>
+                    <span asp-validation-for="TypeId" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Size" class="control-label"></label>
+                    <input asp-for="Size" class="form-control" type="number" placeholder="Size in marla e.g:10,20" required />
+                    <span asp-validation-for="Size" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Baths" class="control-label"></label>
+                    <input asp-for="Baths" class="form-control" placeholder="Enter No. of baths" required />
+                    <span asp-validation-for="Baths" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Rooms" class="control-label"></label>
+                    <input asp-for="Rooms" class="form-control" placeholder="Enter No. of rooms or shops" required />
+                    <span asp-validation-for="Rooms" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Address"></label>
+                    <input asp-for="Address" class="form-control" placeholder="Street 23, Sector, City" required />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Full width for the file input -->
+                <div class="form-group">
+                    <label asp-for="ImageFile"></label>
+                    <input asp-for="ImageFile" type="file" class="form-control" required />
+                    <span asp-validation-for="ImageFile" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Full width for the submit button -->
+                <button type="submit" class="btn btn-primary login_btn float-right">Add</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

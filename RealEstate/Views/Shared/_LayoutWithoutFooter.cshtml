@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Makaan</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="/css/Google web fonts.css" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+
+    <link href="~/theme/fontawesome-free-6.5.2-web/css/all.css" rel="stylesheet" />
+    <link href="~/theme/fontawesome-free-6.5.2-web/css/all.min.css" rel="stylesheet" />
+
+    <!-- Libraries Stylesheet -->
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    <link href="~/theme/lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="~/theme/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="~/theme/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="~/theme/css/style.css" rel="stylesheet" />
+
+
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar Start -->
+        <div class="container-fluid nav-bar bg-transparent">
+            <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
+                <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
+                    <div class="icon p-2 me-2">
+                        <img class="img-fluid" src="~/theme/img/icon-deal.png" alt="Icon" style="width: 30px; height: 30px;">
+                    </div>
+                    <h1 class="m-0 text-primary">Makaan</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a asp-controller="Home" asp-action="Index" class="nav-item nav-link active">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Property</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="property-list.html" class="dropdown-item">Property List</a>
+                                <a href="property-type.html" class="dropdown-item">Property Type</a>
+
+                            </div>
+                        </div>
+
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <a class="btn btn-primary px-3 d-none d-lg-flex" asp-action="SignUp" asp-controller="Login">Register</a>
+                </div>
+            </nav>
+        </div>
+        <!-- Navbar End -->
+    </header>
+
+    <div class="container-fluid" style="padding:0px;margin:0px;">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+   
+    <!-- JavaScript Libraries -->
+    <script src="~/theme/js/jquery-3.4.1.min.js"></script>
+    <script src="~/theme/js/bootstrap.bundle.min.js"></script>
+    <script src="~/theme/lib/wow/wow.min.js"></script>
+    <script src="~/theme/lib/easing/easing.min.js"></script>
+    <script src="~/theme/lib/waypoints/waypoints.min.js"></script>
+    <script src="~/theme/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="~/theme/js/main.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.esm.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.esm.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

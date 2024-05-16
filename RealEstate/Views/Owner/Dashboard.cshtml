@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutOwner.cshtml";
+}
+
+@{
+    ViewData["Title"] = "Teacher Dashboard";
+    var firstName = Context.Session.GetString("FirstName");
+}
+
+
+<div class="text-center">
+    <h2 class="display-4">Welcome @firstName</h2>
+</div>

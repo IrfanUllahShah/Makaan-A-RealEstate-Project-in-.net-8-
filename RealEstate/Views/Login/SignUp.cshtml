@@ -1,0 +1,73 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWithoutFooter.cshtml";
+}
+
+<body class="signup-body">
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Sign Up</h2>
+                </div>
+                <div class="card-body">
+                    <div class="card-body">
+                        @if (TempData["ErrorMessage"] != null)
+                        {
+                            <div class="alert alert-danger" role="alert">
+                                @TempData["ErrorMessage"]
+                            </div>
+                        }
+                         
+
+                    <form method="post" action="@Url.Action("SignUp", "Login")">
+                        @Html.AntiForgeryToken()
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="First Name" name="FirstName" required>
+                        </div>
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Last Name" name="LastName" required>
+                        </div>
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            </div>
+                            <input type="email" class="form-control" placeholder="Email" name="Email" required>
+                        </div>
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Contact" name="Contact" required>
+                        </div>
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="password" class="form-control" placeholder="Password" name="Password" required>
+                        </div>
+
+                        <div class="form-group">
+                                <input type="submit" value="Sign Up" class="btn float-right login_btn" style="background-color: #00B98E;">
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-center links">
+                            <p>Already have an account? <a asp-action="LogIn" asp-controller="Login">Log In</a></p>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

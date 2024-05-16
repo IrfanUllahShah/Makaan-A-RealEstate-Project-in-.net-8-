@@ -1,0 +1,45 @@
+﻿@model InfraStructure.ViewModels.OwnerVm
+
+@{
+    Layout = "~/Views/Shared/_LayoutOwner.cshtml";
+    ViewData["Title"] = "Profile";
+}
+
+<div class="OwnerProfile">
+    <h1>Profile</h1>
+
+    <div>
+
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Contact)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Contact)
+            </dd>
+        
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Update" asp-controller="Owner" asp-route-id="@Model.Id" class="btn login_btn" style="background-color: #00B98E;">Edit</a>
+    </div>
+</div>
