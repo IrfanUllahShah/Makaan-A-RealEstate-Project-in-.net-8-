@@ -59,19 +59,27 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
                         <a asp-controller="Home" asp-action="Index" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Property</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="property-list.html" class="dropdown-item">Property List</a>
-                                <a href="property-type.html" class="dropdown-item">Property Type</a>
-
+                                <a asp-action="PropertyGetAll" asp-controller="Property" class="dropdown-item">Property List</a>
+                                <a asp-action="PropertyTypeGetAll" asp-controller="Property" class="dropdown-item">Property Type</a>
                             </div>
                         </div>
 
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Choise</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a asp-action="SaleList" asp-controller="Property" class="dropdown-item">Sell</a>
+                                <a asp-action="RentList" asp-controller="Property" class="dropdown-item">Rent</a>
+                            </div>
+                        </div>
+
+                        <a asp-action="ContactUs" asp-controller="Home" class="nav-item nav-link">Contact</a>
+@*                         <a class="btn btn-primary px-3 d-none d-lg-flex " asp-action="SignUp" asp-controller="Login">Register</a>
+ *@
                     </div>
-                    <a class="btn btn-primary px-3 d-none d-lg-flex" asp-action="SignUp" asp-controller="Login">Register</a>
+                    <a class="btn btn-primary px-3 d-none d-lg-flex" asp-action="signup" asp-controller="login">Register</a>
                 </div>
             </nav>
         </div>

@@ -10,6 +10,8 @@ using Type = Domain_Models.Type;
 
 namespace InfraStructure.ViewModels
 {
+
+    //View model used for property list on home page
     public class PropertyVm
     {
         public int Id { get; set; }
@@ -31,14 +33,11 @@ namespace InfraStructure.ViewModels
         public string type { get; set; }
         public string owner { get; set; }
 
-        //public int? ChoiseId { get; set; }
-
-        //public int? TypeId { get; set; }
-
-        //public int OwnerId { get; set; }
 
     }
 
+
+    //View model used for add new property by owner
     public class PropertyCreatVm
     {
         [Display(Name = "Title")]
@@ -102,6 +101,59 @@ namespace InfraStructure.ViewModels
         public List<TypeVm> types { get; set;}
         public List<ChoiseVm> choises { get; set; }
 
+    }
+
+
+    //View model used for property list on home page
+    public class PropertyTypesCountVm
+    {
+        public int ApartmentCount { get; set; }
+        public int HomeCount { get; set; }
+        public int OfficeCount { get; set; }
+        public int BuildingCount { get; set; }
+        public int TownHouseCount { get; set; }
+        public int VillCount { get; set; }
+
+    }
+
+    //View model include search dropdowns , property list and Property Count for home page
+    public class PropertyListPlusTypeVm
+    {
+        public List<TypeVm> types { get; set; }
+        public List<ChoiseVm> choises { get; set; }
+        public List<PropertyVm> propertyList { get; set; }
+        public PropertyTypesCountVm propertyTypesCountVm { get; set; }
+
+    }
+
+    //View model to show all details of specific property
+    public class PropertyDetailsVm
+    {
+        public int Id { get; set; }
+
+        public string Title { get; set; } = null!;
+
+        public decimal Price { get; set; }
+
+        public string Image { get; set; } = null!;
+
+        public int Size { get; set; }
+
+        public int Baths { get; set; }
+
+        public int Rooms { get; set; }
+        public string Address { get; set; } = null!;
+        public string Choise { get; set; }
+        public string Type { get; set; }
+
+        [Display(Name = "Owner Name")]
+        public string ownerName { get; set; }
+
+        [Display(Name = "Owner Contact")]
+        public string ownerContact { get; set; }
+
+        [Display(Name = "Owner Email")]
+        public string ownerEmail { get; set; }
     }
 
 }

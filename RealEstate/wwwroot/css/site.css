@@ -131,3 +131,10 @@ input:focus {
     max-width: 100%;
     height: 240px !important;
 }
+
+
+/*Css for property details font*/
+.large-text {
+    font-size: 1.25em; /* Adjust the size as needed */
+    font-weight: bold; /* Optional: make the text bold */
+}

@@ -1,0 +1,98 @@
+﻿@model InfraStructure.ViewModels.PropertyDetailsVm
+
+@{
+    Layout = "~/Views/Shared/_LayoutOwner.cshtml";
+    ViewData["Title"] = "PropertyDetails";
+}
+
+
+
+<div class="OwnerProfile">
+    <h2>Property Details</h2>
+    <div>
+        <hr />
+        <dl class="row">
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+            <dd class="col-sm-10 large-text">
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+            <dd class="col-sm-10 large-text">
+                @Html.DisplayFor(model => model.Price) lac
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Size)
+            </dt>
+            <dd class="col-sm-10 large-text">
+                @Html.DisplayFor(model => model.Size) marla
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Baths)
+            </dt>
+            <dd class="col-sm-10 large-text">
+                @Html.DisplayFor(model => model.Baths) baths
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Rooms)
+            </dt>
+            <dd class="col-sm-10 large-text">
+                @Html.DisplayFor(model => model.Rooms) rooms
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+            <dd class="col-sm-10 large-text">
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Choise)
+            </dt>
+            <dd class="col-sm-10 large-text">
+                @Html.DisplayFor(model => model.Choise)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Type)
+            </dt>
+            <dd class="col-sm-10 large-text">
+                @Html.DisplayFor(model => model.Type)
+            </dd>
+            <br />
+            <br />
+            <h3>Owner details</h3>
+            <hr />
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ownerName)
+            </dt>
+            <dd class="col-sm-10 large-text">
+                @Html.DisplayFor(model => model.ownerName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ownerContact)
+            </dt>
+            <dd class="col-sm-10 large-text">
+                @Html.DisplayFor(model => model.ownerContact)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ownerEmail)
+            </dt>
+            <dd class="col-sm-10 large-text">
+                @Html.DisplayFor(model => model.ownerEmail)
+            </dd>
+            <hr />
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Image)
+            </dt>
+            <dd class="col-sm-10 large-text">
+                <img src="~/images/@Model.Image" alt="Property Image" style="max-width: 100%; height: auto;" />
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="PropertyGetAllForOwner" asp-controller="Property" class="btn float-right login_btn" style="background-color: #00B98E;">Back</a>
+    </div>
+</div>

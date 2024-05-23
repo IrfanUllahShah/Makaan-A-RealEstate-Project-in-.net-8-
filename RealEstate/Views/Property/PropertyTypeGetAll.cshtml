@@ -1,0 +1,83 @@
+﻿@using InfraStructure.ViewModels
+@model PropertyTypesCountVm
+
+<!-- Category Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+            <h1 class="mb-3">Property Types</h1>
+            <p>Different types of properties available here.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-sm-6">
+                <a class="cat-item d-block bg-light text-center rounded p-3" asp-action="ApartmentList" asp-controller="Property">
+                    <div class="rounded p-4">
+                        <div class="icon mb-3">
+                            <img class="img-fluid" src="~/theme/img/icon-apartment.png" alt="Icon">
+                        </div>
+                        <h6>Apartment</h6>
+                        <span>@Model.ApartmentCount Properties</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="cat-item d-block bg-light text-center rounded p-3" asp-action="villaList" asp-controller="Property">
+                    <div class="rounded p-4">
+                        <div class="icon mb-3">
+                            <img class="img-fluid" src="~/theme/img/icon-villa.png" alt="Icon">
+                        </div>
+                        <h6>Villa</h6>
+                        <span>@Model.VillCount Properties</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="cat-item d-block bg-light text-center rounded p-3" asp-action="HomeList" asp-controller="Property">
+                    <div class="rounded p-4">
+                        <div class="icon mb-3">
+                            <img class="img-fluid" src="~/theme/img/icon-house.png" alt="Icon">
+                        </div>
+                        <h6>Home</h6>
+                        <span>@Model.HomeCount Properties</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="cat-item d-block bg-light text-center rounded p-3" asp-action="OfficeList" asp-controller="Property">
+                    <div class="rounded p-4">
+                        <div class="icon mb-3">
+                            <img class="img-fluid" src="~/theme/img/icon-housing.png" alt="Icon">
+                        </div>
+                        <h6>Office</h6>
+                        <span>@Model.OfficeCount Properties</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="cat-item d-block bg-light text-center rounded p-3" asp-action="BuildingList" asp-controller="Property">
+                    <div class="rounded p-4">
+                        <div class="icon mb-3">
+                            <img class="img-fluid" src="~/theme/img/icon-building.png" alt="Icon">
+                        </div>
+                        <h6>Building</h6>
+                        <span>@Model.BuildingCount Properties</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="cat-item d-block bg-light text-center rounded p-3" asp-action="TownHouseList" asp-controller="Property">
+                    <div class="rounded p-4">
+                        <div class="icon mb-3">
+                            <img class="img-fluid" src="~/theme/img/icon-neighborhood.png" alt="Icon">
+                        </div>
+                        <h6>Townhouse</h6>
+                        <span>@Model.TownHouseCount Properties</span>
+                    </div>
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!-- Category End -->
