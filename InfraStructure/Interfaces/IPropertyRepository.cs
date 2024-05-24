@@ -16,5 +16,6 @@ namespace InfraStructure.Interfaces
         Task<List<PropertyVm>> PropertyListForType(int id);
         Task<List<PropertyVm>> PropertyListForChoise(int id);
         Task<PropertyDetailsVm> PropertyDetails(int id);
+        Task<bool> PropertyDelete(int id);
     }
 }

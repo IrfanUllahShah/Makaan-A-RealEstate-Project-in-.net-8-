@@ -254,5 +254,18 @@ namespace RealEstate.Controllers
             return View(result);
         }
 
+        //Actions for delete property by owner after sale
+        public async Task<IActionResult> PropertyDelete(int id)
+        {
+            if(await propertyRepository.PropertyDelete(id))
+            {
+                return RedirectToAction("ShowOwnerPropertyList");
+            }
+            else
+            {
+                return RedirectToAction("ShowOwnerPropertyList");
+            }  
+        }
+
     }
 }

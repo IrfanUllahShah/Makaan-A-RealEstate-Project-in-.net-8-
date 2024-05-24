@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
@@ -156,6 +157,22 @@ namespace InfraStructure.Implementation
 
             return result;
         }
+
+        //Property delete
+        public async Task<bool> PropertyDelete(int id)
+        {
+            var result=await db.Properties.Where(p=>p.Id == id).FirstOrDefaultAsync();
+            if(await genericRepository.Delete(result)) 
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
     }
 }
 
